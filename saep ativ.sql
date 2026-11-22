@@ -71,7 +71,7 @@ begin
 
  if v_id is null then
     return query select false, null ::int, null::varchar, 'Usuário ou senha inválidos'::varchar;
-	elsif not v_ativo then
+	else if not v_ativo then
 	return query select false,null::int,null::varchar,'Acesso Negado :Colaborador inaivo':: Varchar;
 	else
 	return query select true, v_id, v_nome, 'Authenticação realizada com sucesso!' ::Varchar;
@@ -83,7 +83,7 @@ create or replace view vw_painel_principal as
 select
   t.id as tarefa_id,
   c.nome as colaborador_responsavel, 
-  cat.nome as categori,
+  cat.nome as categoria,
   t.titulo as tarefa,
   t.data_agendamento,
   t.status
@@ -137,7 +137,7 @@ execute function fn_trg_validar_e_logar_tarefa();
 create or replace function fn_trg_historico_tarefa()
 returns trigger as $$
 begin
-     insert into historio_tarefas (tarefa_id , observacao)
+     insert into historico_tarefas (tarefa_id , observacao)
 	 values (new.id,'tarefa criada e atribu[ida com status '|| new.status);
 end;
 $$ language plpgsql;
