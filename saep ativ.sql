@@ -119,7 +119,7 @@ declare
      v_ativo boolean;
 begin
 
-     selelct ativo into v_ativo from colaboradores where id = new.colaborador_id
+     select ativo into v_ativo from colaboradores where id = new.colaborador_id
 
 	 if v_ativo is null or not v_ativo then
 	 raise exception 'Não é possível atribuir tarefas a um colaborador inativo ou inexsistente.';
@@ -138,7 +138,7 @@ create or replace function fn_trg_historico_tarefa()
 returns trigger as $$
 begin
      insert into historico_tarefas (tarefa_id , observacao)
-	 values (new.id,'tarefa criada e atribu[ida com status '|| new.status);
+	 values (new.id,'tarefa criada e atribíida com status '|| new.status);
 end;
 $$ language plpgsql;
 
