@@ -72,7 +72,7 @@ begin
  if v_id is null then
     return query select false, null ::int, null::varchar, 'Usuário ou senha inválidos'::varchar;
 	else if not v_ativo then
-	return query select false,null::int,null::varchar,'Acesso Negado :Colaborador inaivo':: Varchar;
+	return query select false,null::int,null::varchar,'Acesso Negado :Colaborador invalido':: Varchar;
 	else
 	return query select true, v_id, v_nome, 'Authenticação realizada com sucesso!' ::Varchar;
 	end if;
