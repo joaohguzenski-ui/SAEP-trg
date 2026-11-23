@@ -33,9 +33,9 @@ create table historico_tarefas(
 
 
 insert into colaboradores (nome,email,cpf_criptografado,senha_hash) values
-('Sonia Barbara','sonia@consultoria.com',pgp_sys_encryt('11122223333', 'chave_lgpd'), encode(digest('senha123','sha256'), 'hex')),
-('Jonas Silva','jonas@consultoria.com',pgp_sys_encryt('09777999887', 'chave_lgpd'), encode(digest('admin123','sha256'), 'hex')),
-('Camila Santos','camila@consultoria.com',pgp_sys_encryt('6267383992', 'chave_lgpd'), encode(digest('mudar123','sha256'), 'hex'));
+('Sonia Barbara','sonia@consultoria.com',pgp_sys_encrypt('11122223333', 'chave_lgpd'), encode(digest('senha123','sha256'), 'hex')),
+('Jonas Silva','jonas@consultoria.com',pgp_sys_encrypt('09777999887', 'chave_lgpd'), encode(digest('admin123','sha256'), 'hex')),
+('Camila Santos','camila@consultoria.com',pgp_sys_encrypt('6267383992', 'chave_lgpd'), encode(digest('mudar123','sha256'), 'hex'));
 
 insert into categorias (nome) values
 ('Desenvolvimento'),
