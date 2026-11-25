@@ -24,7 +24,7 @@ create table tarefas (
 
 create table historico_tarefas (
     id serial primary key,
-    tarefa_id int references tarefa(id) on delete cascade,
+    tarefa_id int references tarefas(id) on delete cascade,
     observacao varchar(200) not null,
     data_alteracao timestamp default current_timestamp
 );
