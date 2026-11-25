@@ -12,7 +12,7 @@ create table categorias(
 );
 create table tarefas (
     id serial primary key,
-    categoria_id int references categoria(id),
+    categoria_id int references categorias(id),
     colaborador_id int references colaboradores(id),
     titulo varchar(150) not null,
     descricao text,
