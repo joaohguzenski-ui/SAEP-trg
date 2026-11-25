@@ -29,10 +29,21 @@ create table historico_tarefas (
     observacao varchar(200) not null,
     data_alteracao timestamp default current_timestamp
 );
-insert into colaboradores (nome, email, cpf_criptografado, senha_hash) values
-('Sonia Barbara', 'sonia@consultoria.com', pgp_sym_encrypt('11122223333', 'chave_lgpd'), encode(digest('senha123', 'sha256'), 'hex')),
-('Jonas Silva', 'jonas@consultoria.com', pgp_sym_encrypt('09777999887', 'chave_lgpd'), encode(digest('admin123', 'sha256'), 'hex')),
-('Camila Santos', 'camila@consultoria.com', pgp_sym_encrypt('6267383992', 'chave_lgpd'), encode(digest('mudar123', 'sha256'), 'hex'))
+INSERT INTO colaboradores
+(nome, email, cpf_criptografado, senha_hash)
+VALUES
+('Sonia Barbara', 'sonia@consultoria.com',
+    pgp_sym_encrypt('11122223333', 'chave_lgpd'),
+    encode(digest('senha123', 'sha256'), 'hex')
+),
+('Jonas Silva','jonas@consultoria.com',
+    pgp_sym_encrypt('09777999887', 'chave_lgpd'),
+    encode(digest('admin123', 'sha256'), 'hex')
+),
+('Camila Santos','camila@consultoria.com',
+    pgp_sym_encrypt('62673839920', 'chave_lgpd'),
+    encode(digest('mudar123', 'sha256'), 'hex')
+);
 insert into categorias (nome) values
 ('Desenvolvimento'),
 ('Consultoria LGPD'),
