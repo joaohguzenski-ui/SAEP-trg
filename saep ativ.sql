@@ -3,6 +3,7 @@ create table colaboradores (
     nome varchar(100) not null,
     email varchar(100) unique not null,
     cpf_criptografado bytea not null,
+    senha_hash varchar (64) not null,
     ativo boolean default true,
     data_cadastro timestamp default current_timestamp
 );
