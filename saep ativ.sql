@@ -6,7 +6,7 @@ create table colaboradores (
     ativo boolean default true,
     data_cadastro timestamp default current_timestamp
 );
-create table cotegorias(
+create table categorias(
   id serial primary key,
   nome varchar (50) unique not null
 );
